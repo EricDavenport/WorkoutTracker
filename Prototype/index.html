@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - iOS & watchOS Workout App Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FitTrack</h1>
+            <p class="tagline">iOS & watchOS Workout Tracking App</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#ios-prototype">iOS Prototype</a></li>
+                <li><a href="#watchos-prototype">watchOS Prototype</a></li>
+                <li><a href="#user-flow">User Flow</a></li>
+                <li><a href="#technical-specs">Technical Specs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="overview">
+            <h2>App Overview</h2>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>FitTrack is a comprehensive workout tracking solution for iOS and watchOS that seamlessly integrates with Apple's health ecosystem. The app allows users to create, track, and analyze workout sessions across both devices with real-time synchronization.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Create and track custom workout sessions</li>
+                        <li>Real-time health metrics via Apple Watch</li>
+                        <li>Detailed workout history and analytics</li>
+                        <li>Apple HealthKit integration</li>
+                        <li>Cross-device synchronization</li>
+                    </ul>
+                </div>
+                <div class="overview-image">
+                    <img src="images/app-overview.png" alt="FitTrack App Overview" class="placeholder-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="ios-prototype">
+            <h2>iOS App Prototype</h2>
+            
+            <div class="prototype-screen">
+                <h3>Home Screen</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="iphone-frame">
+                            <div class="iphone-screen">
+                                <div class="app-header">
+                                    <h4>FitTrack</h4>
+                                    <div class="header-icons">
+                                        <span class="icon">⚙️</span>
+                                    </div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="stats-summary">
+                                        <div class="stat-item">
+                                            <span class="stat-value">1,243</span>
+                                            <span class="stat-label">Calories Today</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">5</span>
+                                            <span class="stat-label">Workouts This Week</span>
+                                        </div>
+                                    </div>
+                                    <div class="section-title">
+                                        <h5>Recent Sessions</h5>
+                                        <a href="#" class="view-all">View All</a>
+                                    </div>
+                                    <div class="session-list">
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Upper Body</h6>
+                                                <p>Today • 45 min • 320 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Cardio</h6>
+                                                <p>Yesterday • 30 min • 280 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Lower Body</h6>
+                                                <p>2 days ago • 50 min • 350 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                    </div>
+                                    <button class="new-session-btn">Start New Session</button>
+                                </div>
+                                <div class="app-tabbar">
+                                    <div class="tab active">
+                                        <span class="tab-icon">🏠</span>
+                                        <span class="tab-label">Home</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span class="tab-icon">📊</span>
+                                        <span class="tab-label">History</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span class="tab-icon">⌚</span>
+                                        <span class="tab-label">Watch</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span class="tab-icon">👤</span>
+                                        <span class="tab-label">Profile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Home Screen Features</h4>
+                        <ul>
+                            <li>Daily and weekly workout statistics at a glance</li>
+                            <li>Quick access to recent workout sessions</li>
+                            <li>One-tap "Start New Session" button</li>
+                            <li>Navigation to all major app sections</li>
+                        </ul>
+                        <p>The home screen provides users with their current fitness status and quick access to start a new workout or review recent activity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Create Workout Session</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="iphone-frame">
+                            <div class="iphone-screen">
+                                <div class="app-header">
+                                    <div class="back-button">‹ Back</div>
+                                    <h4>New Session</h4>
+                                    <div class="header-icons">
+                                        <span class="icon">✓</span>
+                                    </div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="form-group">
+                                        <label>Session Name</label>
+                                        <input type="text" placeholder="e.g., Morning Workout" value="Upper Body">
+                                    </div>
+                                    <div class="section-title">
+                                        <h5>Exercises</h5>
+                                        <button class="add-btn">+ Add</button>
+                                    </div>
+                                    <div class="exercise-list">
+                                        <div class="exercise-item">
+                                            <div class="exercise-header">
+                                                <h6>Push-ups</h6>
+                                                <button class="edit-btn">Edit</button>
+                                            </div>
+                                            <div class="exercise-details">
+                                                <p>3 sets × 10 reps</p>
+                                            </div>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <div class="exercise-header">
+                                                <h6>Dumbbell Curls</h6>
+                                                <button class="edit-btn">Edit</button>
+                                            </div>
+                                            <div class="exercise-details">
+                                                <p>3 sets × 12 reps • 15 lbs</p>
+                                            </div>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <div class="exercise-header">
+                                                <h6>Tricep Dips</h6>
+                                                <button class="edit-btn">Edit</button>
+                                            </div>
+                                            <div class="exercise-details">
+                                                <p>3 sets × 10 reps</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button class="start-session-btn">Start Session</button>
+                                        <button class="start-on-watch-btn">Start on Watch</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Create Workout Session Features</h4>
+                        <ul>
+                            <li>Name and customize workout sessions</li>
+                            <li>Add multiple exercises with sets, reps, and weights</li>
+                            <li>Edit exercise details</li>
+                            <li>Option to start session on iPhone or Apple Watch</li>
+                        </ul>
+                        <p>This screen allows users to build custom workout sessions by adding exercises with specific parameters. Users can start the session immediately or send it to their Apple Watch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Active Workout Session</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="iphone-frame">
+                            <div class="iphone-screen">
+                                <div class="app-header">
+                                    <h4>Upper Body</h4>
+                                    <div class="header-icons">
+                                        <span class="icon">⏸️</span>
+                                    </div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="session-timer">
+                                        <div class="timer-display">00:23:45</div>
+                                        <div class="calories-display">245 calories</div>
+                                    </div>
+                                    <div class="current-exercise">
+                                        <h5>Current Exercise</h5>
+                                        <div class="exercise-card">
+                                            <h6>Dumbbell Curls</h6>
+                                            <p>Set 2 of 3 • 12 reps • 15 lbs</p>
+                                            <div class="set-progress">
+                                                <div class="set-complete"></div>
+                                                <div class="set-current"></div>
+                                                <div class="set-upcoming"></div>
+                                            </div>
+                                            <button class="complete-set-btn">Complete Set</button>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming-exercises">
+                                        <h5>Up Next</h5>
+                                        <div class="exercise-item">
+                                            <h6>Dumbbell Curls</h6>
+                                            <p>Set 3 of 3 • 12 reps • 15 lbs</p>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <h6>Tricep Dips</h6>
+                                            <p>3 sets × 10 reps</p>
+                                        </div>
+                                    </div>
+                                    <button class="end-session-btn">End Session</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Active Workout Session Features</h4>
+                        <ul>
+                            <li>Real-time session timer and calorie counter</li>
+                            <li>Current exercise tracking with set progress</li>
+                            <li>Preview of upcoming exercises</li>
+                            <li>One-tap set completion</li>
+                            <li>Option to pause or end the session</li>
+                        </ul>
+                        <p>During an active workout, users can track their progress through each exercise and set. The app displays real-time metrics from the Apple Watch if connected.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Session Summary</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="iphone-frame">
+                            <div class="iphone-screen">
+                                <div class="app-header">
+                                    <div class="back-button">‹ Back</div>
+                                    <h4>Session Complete</h4>
+                                    <div class="header-icons">
+                                        <span class="icon">⚙️</span>
+                                    </div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="summary-header">
+                                        <h5>Upper Body</h5>
+                                        <p>Today, 2:15 PM - 3:05 PM</p>
+                                    </div>
+                                    <div class="summary-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-value">50:23</span>
+                                            <span class="stat-label">Duration</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">320</span>
+                                            <span class="stat-label">Calories</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">3</span>
+                                            <span class="stat-label">Exercises</span>
+                                        </div>
+                                    </div>
+                                    <div class="section-title">
+                                        <h5>Exercises Completed</h5>
+                                    </div>
+                                    <div class="completed-exercises">
+                                        <div class="exercise-item">
+                                            <div class="exercise-info">
+                                                <h6>Push-ups</h6>
+                                                <p>3 sets × 10 reps</p>
+                                            </div>
+                                            <div class="exercise-completion">✓</div>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <div class="exercise-info">
+                                                <h6>Dumbbell Curls</h6>
+                                                <p>3 sets × 12 reps • 15 lbs</p>
+                                            </div>
+                                            <div class="exercise-completion">✓</div>
+                                        </div>
+                                        <div class="exercise-item">
+                                            <div class="exercise-info">
+                                                <h6>Tricep Dips</h6>
+                                                <p>3 sets × 10 reps</p>
+                                            </div>
+                                            <div class="exercise-completion">✓</div>
+                                    </div>
+                                    </div>
+                                    <div class="health-sync">
+                                        <div class="sync-icon">✓</div>
+                                        <div class="sync-text">
+                                            <h6>Synced with Apple Health</h6>
+                                            <p>Workout data has been added to your fitness records</p>
+                                        </div>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button class="share-btn">Share Results</button>
+                                        <button class="new-session-btn">New Session</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Session Summary Features</h4>
+                        <ul>
+                            <li>Complete workout session overview</li>
+                            <li>Key metrics: duration, calories burned, exercises completed</li>
+                            <li>Detailed breakdown of all completed exercises</li>
+                            <li>Apple Health sync confirmation</li>
+                            <li>Options to share results or start a new session</li>
+                        </ul>
+                        <p>After completing a workout, users can review their performance and see that their data has been synced with Apple Health. This screen provides a comprehensive summary of the entire workout session.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Workout History</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="iphone-frame">
+                            <div class="iphone-screen">
+                                <div class="app-header">
+                                    <h4>History</h4>
+                                    <div class="header-icons">
+                                        <span class="icon">🔍</span>
+                                    </div>
+                                </div>
+                                <div class="app-content">
+                                    <div class="filter-options">
+                                        <button class="filter-btn active">All</button>
+                                        <button class="filter-btn">This Week</button>
+                                        <button class="filter-btn">This Month</button>
+                                    </div>
+                                    <div class="history-list">
+                                        <div class="history-date-header">Today</div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Upper Body</h6>
+                                                <p>2:15 PM • 50 min • 320 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                        
+                                        <div class="history-date-header">Yesterday</div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Cardio</h6>
+                                                <p>8:30 AM • 30 min • 280 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                        
+                                        <div class="history-date-header">Monday, June 5</div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Lower Body</h6>
+                                                <p>6:45 PM • 50 min • 350 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                        <div class="session-item">
+                                            <div class="session-info">
+                                                <h6>Morning Run</h6>
+                                                <p>7:15 AM • 25 min • 210 cal</p>
+                                            </div>
+                                            <span class="chevron">›</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="app-tabbar">
+                                    <div class="tab">
+                                        <span class="tab-icon">🏠</span>
+                                        <span class="tab-label">Home</span>
+                                    </div>
+                                    <div class="tab active">
+                                        <span class="tab-icon">📊</span>
+                                        <span class="tab-label">History</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span class="tab-icon">⌚</span>
+                                        <span class="tab-label">Watch</span>
+                                    </div>
+                                    <div class="tab">
+                                        <span class="tab-icon">👤</span>
+                                        <span class="tab-label">Profile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Workout History Features</h4>
+                        <ul>
+                            <li>Chronological list of all workout sessions</li>
+                            <li>Organized by date with clear headers</li>
+                            <li>Quick filtering options (All, This Week, This Month)</li>
+                            <li>Session summary preview with key metrics</li>
+                            <li>Tap to view detailed session information</li>
+                        </ul>
+                        <p>The history screen allows users to browse through their past workout sessions, organized chronologically and with filtering options for easier navigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="watchos-prototype">
+            <h2>watchOS Companion App Prototype</h2>
+            
+            <div class="prototype-screen">
+                <h3>Watch Home Screen</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="watch-frame">
+                            <div class="watch-screen">
+                                <div class="watch-app-title">FitTrack</div>
+                                <div class="watch-content">
+                                    <div class="watch-stat">
+                                        <span class="watch-stat-value">1,243</span>
+                                        <span class="watch-stat-label">CAL TODAY</span>
+                                    </div>
+                                    <div class="watch-buttons">
+                                        <button class="watch-btn">Start Workout</button>
+                                        <button class="watch-btn">Recent</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Watch Home Screen Features</h4>
+                        <ul>
+                            <li>At-a-glance daily calorie summary</li>
+                            <li>Quick access to start a new workout</li>
+                            <li>View recent workouts</li>
+                            <li>Optimized for quick interactions</li>
+                        </ul>
+                        <p>The watchOS home screen provides essential information and quick actions, designed for glanceable interactions while on the go.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Start Workout</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="watch-frame">
+                            <div class="watch-screen">
+                                <div class="watch-app-title">Start Workout</div>
+                                <div class="watch-content">
+                                    <div class="watch-workout-list">
+                                        <div class="watch-workout-item active">
+                                            <span>Upper Body</span>
+                                        </div>
+                                        <div class="watch-workout-item">
+                                            <span>Cardio</span>
+                                        </div>
+                                        <div class="watch-workout-item">
+                                            <span>Lower Body</span>
+                                        </div>
+                                        <div class="watch-workout-item">
+                                            <span>Custom...</span>
+                                        </div>
+                                    </div>
+                                    <button class="watch-start-btn">START</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Start Workout Features</h4>
+                        <ul>
+                            <li>Select from saved workout templates</li>
+                            <li>Option to create custom workout</li>
+                            <li>Quick-start functionality</li>
+                            <li>Syncs with workout templates created on iPhone</li>
+                        </ul>
+                        <p>Users can quickly select and start a workout from their Apple Watch, choosing from templates created on their iPhone or creating a custom workout on the fly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Active Workout Tracking</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="watch-frame">
+                            <div class="watch-screen">
+                                <div class="watch-app-title">Upper Body</div>
+                                <div class="watch-content">
+                                    <div class="watch-timer">00:23:45</div>
+                                    <div class="watch-calories">245 CAL</div>
+                                    <div class="watch-exercise">
+                                        <div class="watch-exercise-name">Dumbbell Curls</div>
+                                        <div class="watch-exercise-detail">Set 2 of 3</div>
+                                    </div>
+                                    <div class="watch-controls">
+                                        <button class="watch-control-btn">NEXT</button>
+                                        <button class="watch-control-btn">PAUSE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Active Workout Tracking Features</h4>
+                        <ul>
+                            <li>Real-time workout duration</li>
+                            <li>Calorie tracking using watch sensors</li>
+                            <li>Current exercise and set information</li>
+                            <li>Controls to navigate between exercises or pause workout</li>
+                            <li>Haptic feedback for set completion</li>
+                        </ul>
+                        <p>During a workout, the Apple Watch displays essential metrics and allows users to control their workout progress with minimal interaction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prototype-screen">
+                <h3>Workout Summary</h3>
+                <div class="screen-content">
+                    <div class="screen-image">
+                        <div class="watch-frame">
+                            <div class="watch-screen">
+                                <div class="watch-app-title">Workout Complete</div>
+                                <div class="watch-content">
+                                    <div class="watch-summary-stats">
+                                        <div class="watch-summary-stat">
+                                            <span class="watch-stat-value">50:23</span>
+                                            <span class="watch-stat-label">DURATION</span>
+                                        </div>
+                                        <div class="watch-summary-stat">
+                                            <span class="watch-stat-value">320</span>
+                                            <span class="watch-stat-label">CALORIES</span>
+                                        </div>
+                                    </div>
+                                    <div class="watch-sync-status">
+                                        <span class="watch-sync-icon">✓</span>
+                                        <span class="watch-sync-text">Synced</span>
+                                    </div>
+                                    <div class="watch-controls">
+                                        <button class="watch-control-btn">DONE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-description">
+                        <h4>Workout Summary Features</h4>
+                        <ul>
+                            <li>Concise workout summary with key metrics</li>
+                            <li>Sync status with iPhone app and Apple Health</li>
+                            <li>Quick completion with one tap</li>
+                            <li>Automatic data transfer to iPhone for detailed review</li>
+                        </ul>
+                        <p>After completing a workout, users see a summary of their performance on the watch, with confirmation that data has been synced to their iPhone and Apple Health.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="user-flow">
+            <h2>User Flow</h2>
+            <div class="flow-diagram">
+                <img src="images/user-flow.png" alt="User Flow Diagram" class="placeholder-image">
+            </div>
+            <div class="flow-description">
+                <h3>Primary User Journeys</h3>
+                
+                <div class="journey">
+                    <h4>1. Creating and Completing a Workout on iPhone</h4>
+                    <ol>
+                        <li>User opens the FitTrack app on their iPhone</li>
+                        <li>Taps "Start New Session" on the home screen</li>
+                        <li>Names the session and adds exercises with sets/reps</li>
+                        <li>Taps "Start Session" to begin the workout</li>
+                        <li>Completes each exercise, marking sets as done</li>
+                        <li>Taps "End Session" when finished</li>
+                        <li>Reviews workout summary and synced health data</li>
+                    </ol>
+                </div>
+                
+                <div class="journey">
+                    <h4>2. Starting a Workout on Apple Watch</h4>
+                    <ol>
+                        <li>User opens the FitTrack app on their Apple Watch</li>
+                        <li>Selects "Start Workout" from the home screen</li>
+                        <li>Chooses a workout template from the list</li>
+                        <li>Taps "START" to begin tracking</li>
+                        <li>Navigates through exercises using the watch interface</li>
+                        <li>Workout data is tracked in real-time</li>
+                        <li>After completion, reviews summary on watch</li>
+                        <li>Data automatically syncs to iPhone app and Apple Health</li>
+                    </ol>
+                </div>
+                
+                <div class="journey">
+                    <h4>3. Reviewing Workout History</h4>
+                    <ol>
+                        <li>User opens the FitTrack app on their iPhone</li>
+                        <li>Taps the "History" tab in the bottom navigation</li>
+                        <li>Browses through past workout sessions</li>
+                        <li>Applies filters to find specific workouts</li>
+                        <li>Taps on a session to view detailed information</li>
+                        <li>Reviews complete workout breakdown and metrics</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="technical-specs">
+            <h2>Technical Specifications</h2>
+            
+            <div class="tech-section">
+                <h3>Apple HealthKit Integration</h3>
+                <p>FitTrack seamlessly integrates with Apple HealthKit to provide a comprehensive fitness tracking experience:</p>
+                <ul>
+                    <li>Reads and writes workout data to Apple Health</li>
+                    <li>Stores workout type, duration, calories, and heart rate data</li>
+                    <li>Utilizes HealthKit permissions to access relevant health metrics</li>
+                    <li>Contributes to Apple Fitness activity rings and workout goals</li>
+                    <li>Maintains privacy by requesting only necessary permissions</li>
+                </ul>
+            </div>
+            
+            <div class="tech-section">
+                <h3>Cross-Device Synchronization</h3>
+                <p>The app ensures seamless data flow between iPhone and Apple Watch:</p>
+                <ul>
+                    <li>Real-time data syncing using WatchConnectivity framework</li>
+                    <li>Background transfer of workout templates from iPhone to Watch</li>
+                    <li>Automatic upload of Watch workout data to iPhone app</li>
+                    <li>Offline capability with sync when connection is restored</li>
+                    <li>Conflict resolution for workouts started on multiple devices</li>
+                </ul>
+            </div>
+            
+            <div class="tech-section">
+                <h3>Data Architecture</h3>
+                <p>FitTrack uses a robust data model to manage workout information:</p>
+                <ul>
+                    <li>Core Data for persistent storage on iPhone</li>
+                    <li>Lightweight storage solution for Apple Watch</li>
+                    <li>JSON-based data transfer between devices</li>
+                    <li>Structured workout templates with exercise definitions</li>
+                    <li>Historical workout data with detailed metrics</li>
+                </ul>
+            </div>
+            
+            <div class="tech-section">
+                <h3>UI/UX Considerations</h3>
+                <p>The interface is designed with Apple's Human Interface Guidelines in mind:</p>
+                <ul>
+                    <li>Optimized for one-handed iPhone operation during workouts</li>
+                    <li>Large tap targets on Apple Watch for sweaty workout conditions</li>
+                    <li>Haptic feedback for important workout events</li>
+                    <li>Dark mode support for both platforms</li>
+                    <li>Accessibility features including VoiceOver support</li>
+                    <li>Complications for Apple Watch faces</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FitTrack App Prototype</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,858 @@
+/* Base Styles */
+:root {
+    --primary-color: #007AFF;
+    --secondary-color: #5AC8FA;
+    --success-color: #34C759;
+    --warning-color: #FF9500;
+    --danger-color: #FF3B30;
+    --light-gray: #F2F2F7;
+    --medium-gray: #C7C7CC;
+    --dark-gray: #8E8E93;
+    --text-color: #000000;
+    --background-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    padding: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* Overview Section */
+.overview-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.overview-text {
+    flex: 1;
+}
+
+.overview-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: auto;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+/* Prototype Screens */
+.prototype-screen {
+    margin-bottom: 3rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.prototype-screen h3 {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    margin-top: 0;
+}
+
+.screen-content {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.screen-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.screen-description {
+    flex: 1;
+}
+
+/* iPhone Frame */
+.iphone-frame {
+    width: 375px;
+    height: 812px;
+    background-color: #1a1a1a;
+    border-radius: 40px;
+    padding: 12px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Watch Frame */
+.watch-frame {
+    width: 312px;
+    height: 390px;
+    background-color: #1a1a1a;
+    border-radius: 38px;
+    padding: 12px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.watch-screen {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 12px;
+}
+
+/* App UI Components */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.app-header h4 {
+    margin: 0;
+}
+
+.header-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.back-button {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.app-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.app-tabbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid var(--light-gray);
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+}
+
+.tab.active {
+    color: var(--primary-color);
+}
+
+.tab-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+/* Stats Components */
+.stats-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+/* Session List */
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-title h5 {
+    margin: 0;
+}
+
+.view-all {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.session-list {
+    margin-bottom: 24px;
+}
+
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--light-gray);
+    margin-bottom: 12px;
+}
+
+.session-info h6 {
+    margin: 0 0 4px 0;
+}
+
+.session-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.chevron {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+/* Buttons */
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-session-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+}
+
+.new-session-btn:hover {
+    background-color: #0062cc;
+}
+
+.add-btn, .edit-btn {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+    font-size: 1rem;
+}
+
+/* Exercise List */
+.exercise-list {
+    margin-bottom: 24px;
+}
+
+.exercise-item {
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.exercise-header h6 {
+    margin: 0;
+}
+
+.exercise-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+
+.start-session-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.start-on-watch-btn {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+/* Session Timer */
+.session-timer {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.calories-display {
+    font-size: 1.2rem;
+    color: var(--success-color);
+}
+
+/* Current Exercise */
+.current-exercise {
+    margin-bottom: 24px;
+}
+
+.exercise-card {
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.set-progress {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.set-complete, .set-current, .set-upcoming {
+    height: 8px;
+    flex: 1;
+    border-radius: 4px;
+}
+
+.set-complete {
+    background-color: var(--success-color);
+}
+
+.set-current {
+    background-color: var(--primary-color);
+}
+
+.set-upcoming {
+    background-color: var(--medium-gray);
+}
+
+.complete-set-btn {
+    background-color: var(--success-color);
+    color: white;
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* Upcoming Exercises */
+.upcoming-exercises {
+    margin-bottom: 24px;
+}
+
+.end-session-btn {
+    background-color: var(--danger-color);
+    color: white;
+    width: 100%;
+}
+
+/* Summary Screen */
+.summary-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.summary-header h5 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.summary-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 24px;
+}
+
+.completed-exercises {
+    margin-bottom: 24px;
+}
+
+.exercise-completion {
+    color: var(--success-color);
+    font-size: 1.2rem;
+}
+
+.health-sync {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.sync-icon {
+    background-color: var(--success-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.sync-text h6 {
+    margin: 0 0 4px 0;
+}
+
+.sync-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.share-btn {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+/* History Screen */
+.filter-options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.filter-btn {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.history-date-header {
+    font-weight: 600;
+    margin: 16px 0 8px 0;
+    color: var(--dark-gray);
+}
+
+/* Watch UI Components */
+.watch-app-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.watch-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.watch-stat {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.watch-stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.watch-stat-label {
+    font-size: 0.7rem;
+    color: var(--medium-gray);
+}
+
+.watch-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.watch-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.watch-workout-list {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.watch-workout-item {
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    background-color: #333;
+}
+
+.watch-workout-item.active {
+    background-color: var(--primary-color);
+}
+
+.watch-start-btn {
+    background-color: var(--success-color);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.watch-timer {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 4px;
+}
+
+.watch-calories {
+    font-size: 1rem;
+    color: var(--success-color);
+    margin-bottom: 16px;
+}
+
+.watch-exercise {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.watch-exercise-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.watch-exercise-detail {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+}
+
+.watch-controls {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.watch-control-btn {
+    flex: 1;
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 8px;
+    font-size: 0.8rem;
+}
+
+.watch-summary-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.watch-summary-stat {
+    text-align: center;
+}
+
+.watch-sync-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.watch-sync-icon {
+    background-color: var(--success-color);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+/* User Flow Section */
+.flow-diagram {
+    margin: 2rem 0;
+}
+
+.journey {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+}
+
+.journey h4 {
+    margin-bottom: 1rem;
+}
+
+.journey ol {
+    padding-left: 1.5rem;
+}
+
+.journey li {
+    margin-bottom: 0.5rem;
+}
+
+/* Technical Specs Section */
+.tech-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 12px;
+}
+
+.tech-section h3 {
+    margin-top: 0;
+}
+
+.tech-section ul {
+    padding-left: 1.5rem;
+}
+
+.tech-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .overview-content {
+        flex-direction: column;
+    }
+    
+    .screen-content {
+        flex-direction: column;
+    }
+    
+    .iphone-frame, .watch-frame {
+        margin: 0 auto 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .iphone-frame {
+        width: 300px;
+        height: 650px;
+    }
+    
+    .watch-frame {
+        width: 250px;
+        height: 312px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .iphone-frame {
+        width: 280px;
+        height: 606px;
+    }
+    
+    .watch-frame {
+        width: 220px;
+        height: 275px;
+    }
+}
