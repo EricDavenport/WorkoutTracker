@@ -856,3 +856,40 @@ footer {
         height: 275px;
     }
 }
+
+/* Add this to your existing CSS file */
+
+/* Copy Button Styles */
+.copy-btn {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.copy-icon {
+    margin-right: 4px;
+    font-size: 0.9rem;
+}
+
+/* Position the copy button in the header */
+.prototype-screen h3, .tech-section h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prototype-screen h3 .copy-btn, .tech-section h3 .copy-btn {
+    font-weight: normal;
+}

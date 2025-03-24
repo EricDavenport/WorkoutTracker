@@ -71,4 +71,102 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
+    
+    // Add copy functionality to all prototype screens
+    addCopyButtons();
 });
+
+// Function to add copy buttons to all prototype screens
+function addCopyButtons() {
+    // Add copy buttons to each prototype screen
+    document.querySelectorAll('.prototype-screen').forEach((screen, index) => {
+        // Create copy button
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.innerHTML = '<span class="copy-icon">📋</span> Copy HTML';
+        copyBtn.setAttribute('data-index', index);
+        
+        // Add button to screen header
+        const header = screen.querySelector('h3');
+        header.appendChild(copyBtn);
+        
+        // Add click event
+        copyBtn.addEventListener('click', function() {
+            const screenIndex = this.getAttribute('data-index');
+            const screenContent = document.querySelectorAll('.prototype-screen')[screenIndex];
+            
+            // Get HTML content to copy
+            const htmlToCopy = getFormattedHTML(screenContent);
+            
+            // Copy to clipboard
+            copyToClipboard(htmlToCopy);
+            
+            // Show feedback
+            this.innerHTML = '<span class="copy-icon">✓</span> Copied!';
+            setTimeout(() => {
+                this.innerHTML = '<span class="copy-icon">📋</span> Copy HTML';
+            }, 2000);
+        });
+    });
+    
+    // Add copy buttons to code sections
+    document.querySelectorAll('.tech-section').forEach((section, index) => {
+        // Create copy button
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.innerHTML = '<span class="copy-icon">📋</span> Copy Text';
+        copyBtn.setAttribute('data-index', index);
+        
+        // Add button to section header
+        const header = section.querySelector('h3');
+        header.appendChild(copyBtn);
+        
+        // Add click event
+        copyBtn.addEventListener('click', function() {
+            const sectionIndex = this.getAttribute('data-index');
+            const sectionContent = document.querySelectorAll('.tech-section')[sectionIndex];
+            
+            // Get text content to copy
+            const textToCopy = sectionContent.textContent.trim();
+            
+            // Copy to clipboard
+            copyToClipboard(textToCopy);
+            
+            // Show feedback
+            this.innerHTML = '<span class="copy-icon">✓</span> Copied!';
+            setTimeout(() => {
+                this.innerHTML = '<span class="copy-icon">📋</span> Copy Text';
+            }, 2000);
+        });
+    });
+}
+
+// Function to get formatted HTML for copying
+function getFormattedHTML(element) {
+    // Clone the element to avoid modifying the original
+    const clone = element.cloneNode(true);
+    
+    // Remove copy buttons from the clone
+    clone.querySelectorAll('.copy-btn').forEach(btn => btn.remove());
+    
+    // Get the HTML content
+    return clone.outerHTML;
+}
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    // Create a temporary textarea element
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    
+    // Select and copy the text
+    textarea.select();
+    document.execCommand('copy');
+    
+    // Remove the textarea
+    document.body.removeChild(textarea);
+}
