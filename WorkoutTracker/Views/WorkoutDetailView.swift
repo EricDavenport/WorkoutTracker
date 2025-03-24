@@ -247,3 +247,34 @@ private struct ExerciseDetailView: View {
         }
     }
 } 
+
+#Preview {
+    WorkoutDetailView(session: WorkoutSession(
+        startTime: Date().addingTimeInterval(-3600), // 1 hour ago
+        endTime: Date(),
+        exercises: [
+            Exercise(
+                name: "Bench Press",
+                category: .strength,
+                muscleGroups: [.chest, .shoulders],
+                sets: [
+                    ExerciseSet(reps: 10, weight: 60, isCompleted: true, timestamp: Date().addingTimeInterval(-3300)),
+                    ExerciseSet(reps: 10, weight: 65, isCompleted: true, timestamp: Date().addingTimeInterval(-3000)),
+                    ExerciseSet(reps: 8, weight: 70, isCompleted: true, timestamp: Date().addingTimeInterval(-2700))
+                ]
+            ),
+            Exercise(
+                name: "Pull-ups",
+                category: .strength,
+                muscleGroups: [.back, .arms],
+                sets: [
+                    ExerciseSet(reps: 12, weight: 0, isCompleted: true, timestamp: Date().addingTimeInterval(-2400)),
+                    ExerciseSet(reps: 10, weight: 0, isCompleted: true, timestamp: Date().addingTimeInterval(-2100))
+                ]
+            )
+        ],
+        caloriesBurned: 245.0,
+        averageHeartRate: 142.0,
+        status: .completed
+    ))
+}

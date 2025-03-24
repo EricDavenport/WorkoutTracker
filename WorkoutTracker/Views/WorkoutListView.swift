@@ -67,4 +67,8 @@ struct CurrentWorkoutCard: View {
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: duration) ?? "00:00:00"
     }
-} 
+}
+
+#Preview {
+    WorkoutListView()
+}
